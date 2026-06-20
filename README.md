@@ -6,25 +6,36 @@ Hardcoding freedom into the systems of tomorrow.
 
 ## Purpose
 
-Compliance Strategy Matrix turns operational risk into explicit controls, audit paths, and decision rules. It is a planning surface for keeping fast-moving systems reviewable.
+Compliance Strategy Matrix turns operational risk into explicit controls, audit records, and review gates. It is a planning and evidence-support repo, not a source of legal conclusions.
 
-## Current Components
+## What Changed
+
+- Removed over-specific banking/iGaming claims from the public repo.
+- Removed absolute local file writes.
+- Added a deterministic audit-record builder.
+- Added tests for record creation and validation.
+- Moved roadmap content into a counsel-review-safe planning document.
+
+## Structure
 
 ```text
-Compliance & Strategy Matrix/
-├── strategic_roadmap.md
-└── treasury_auditor.py
+.
+|-- compliance_strategy/
+|   |-- __init__.py
+|   `-- audit_record.py
+|-- docs/
+|   `-- strategic_roadmap.md
+|-- tests/
+|   `-- test_audit_record.py
+`-- README.md
 ```
 
-## Scope
+## Verify
 
-- Strategy notes that are safe for public review.
-- Treasury audit concepts and control checks.
-- Compliance posture mapping for automation systems.
-- Clear boundaries between public principles and private tactics.
+```bash
+python -m unittest discover -s tests -q
+```
 
-## Production Notes
+## Legal Note
 
-- Keep legal conclusions out unless reviewed by counsel.
-- Separate policy, implementation, and evidence.
-- Add test fixtures for auditor logic before connecting live data.
+This repository does not provide legal, tax, banking, securities, gaming, or compliance advice. Use it as a technical planning artifact and evidence organizer, then review with qualified professionals before relying on it for regulated activity.
